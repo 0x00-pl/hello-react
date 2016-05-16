@@ -6,11 +6,20 @@ class Star extends Component {
     clickHandle(evt) {
         this.props.onClickStar(this.props.idx)
     }
+    getValue() {
+        let val = this.props.value
+        if (val && 0 <= val && val <= 1) {
+            return { opacity: val }
+        } else {
+            return { opacity: this.props.active ? 1 : 0 }
+        }
+    }
     render() {
-        let cls = 'stars-star'
-        cls += this.props.active ? ' active' : ''
+        let cls = this.props.active ? ' active' : ''
         return (
-            <span className={cls} onClick={this.clickHandle.bind(this) }> </span>
+            <span className={'stars-star ' + cls} onClick={this.clickHandle.bind(this) }>
+                <span className='stars-star stars-star-cover' style={ this.getValue() }></span>
+            </span>
         )
     }
 }
@@ -19,20 +28,35 @@ class Star extends Component {
 export default class Stars extends Component {
     constructor() {
         super()
-        this.state = { stars_count: 5, stars_on: 0 }
+        let score = this.props && this.props.score || 0
+        this.state = { stars_count: 5, stars_score: score }
     }
     clieckStarHandle(idx) {
-        this.setState({ stars_on: idx + 1 })
+        if (!this.props.freeze) {
+            let score = (idx + 1.0) / this.state.stars_count
+            this.setState({ stars_score: score })
+            if (this.props.onScoreChange) {
+                this.props.onScoreChange(score)
+            }
+        }
+    }
+    getStarValue(idx) {
+        let score = this.props && this.props.score || this.state.stars_score
+        let value_sum = score * this.state.stars_count
+        if (value_sum >= idx + 1) { return 1 }
+        else if (value_sum > idx) { return value_sum - idx }
+        else { return 0 }
     }
     render() {
-        console.log(this.state.stars_on)
         return (
             <span className='stars'>
                 {
                     Array(this.state.stars_count).fill(0).map((_, idx) => {
                         return (
-                            <Star key={idx} idx={idx} active={this.state.stars_on > idx}
-                                onClickStar={this.clieckStarHandle.bind(this) }>
+                            <Star key={idx} idx={idx}
+                                active={this.getStarValue(idx) == 0 ? 0 : 1}
+                                value={this.getStarValue(idx) }
+                                onClickStar={this.clieckStarHandle.bind(this) } >
                             </Star>
                         )
                     })
