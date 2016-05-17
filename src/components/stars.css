@@ -49,3 +49,124 @@
     width: 20px;
     transform: rotate(-72deg);
 }
+
+
+.effect1 {
+    position: relative; top: 0;
+    display: inline-block;
+    width: 8em;
+    text-align: center;
+    background-color: aqua
+}
+
+.effect1::before, .effect1::after{
+    position: absolute; top: 0;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+}
+.effect1:hover::before, .effect1:hover::after{
+    opacity: 1;
+}
+
+
+.effect1::before {
+    content: '[';
+    left: 20%;
+}
+.effect1::after {
+    content: ']';
+    right: 20%;
+}
+
+.effect1:hover::before{
+    left: 0;
+}
+.effect1:hover::after{
+    right: 0;
+}
+
+
+.effect2 {
+    position: relative; top: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    
+    width: 8em;
+    color: darkgreen;
+    background-color: seagreen;
+}
+
+.effect2::before, .effect2::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute; left: 0;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    
+    width: 8em;
+    border: 2px solid transparent;
+    opacity: 0;
+}
+.effect2::before {
+    top: 0;
+    transform: translate3d(0, -10px, 0);
+}
+.effect2::after {
+    bottom: 0;
+    transform: translate3d(0, 10px, 0);
+}
+
+.effect2:hover {
+    color: white   
+}
+.effect2:hover::before, .effect2:hover::after {
+    border: 2px solid cornflowerblue;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.effect3 {
+    position: relative; top: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    
+    width: 8em;
+    color: gray;
+    background-color: peru;
+    z-index: 0;
+}
+
+.effect3::before, .effect3::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute; left: 0;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    
+    width: 8em;
+    border: 1px solid gray;
+    z-index: -1;
+}
+.effect3::before {
+    top: 0;
+}
+.effect3::after {
+    bottom: 0;
+}
+
+.effect3:hover {
+    color: white   
+}
+.effect3:hover::before {
+    top: 50%;
+    transform: rotateZ(45deg)
+}
+.effect3:hover::after {
+    bottom: 50%;
+    transform: rotateZ(-45deg)
+}
