@@ -19,3 +19,33 @@
     background-color: darkred;
     z-index: 1;
 }
+
+
+.star-icon {
+    position: relative; top: 7px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 7px solid darkred;
+    box-sizing: border-box;
+    width: 20px;
+}
+.star-icon::before {
+    position: absolute; content:'';
+    left: -10px; top: -7px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 7px solid red;
+    box-sizing: border-box;
+    width: 20px;
+    transform: rotate(72deg);
+}
+.star-icon::after {
+    position: absolute; content:'';
+    left: -10px; top: -7px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 7px solid mediumvioletred;
+    box-sizing: border-box;
+    width: 20px;
+    transform: rotate(-72deg);
+}

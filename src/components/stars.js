@@ -9,9 +9,9 @@ class Star extends Component {
     getValue() {
         let val = this.props.value
         if (val && 0 <= val && val <= 1) {
-            return { opacity: val }
+            return { width: (val*100)+'%' }
         } else {
-            return { opacity: this.props.active ? 1 : 0 }
+            return { width: this.props.active ? '100%' : '0%' }
         }
     }
     render() {
