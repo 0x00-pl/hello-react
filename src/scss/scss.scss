@@ -1,0 +1,51 @@
+$grid: 12;
+$gutter: 8px;
+
+@for $i from 1 through $grid - 1 {
+    .width-#{$i} {
+        width: percentage($i/$grid);
+    }
+}
+
+@for $i from 1 through $grid - 1 {
+    .col-#{$i} {
+        float: left;
+        box-sizing: border-box;
+        padding: ($gutter / 2) 0;
+        width: percentage($i/$grid);
+    }
+}
+
+
+.test{
+    height: $gutter;
+    display: inline-block;
+    border: 1px solid red;
+}
+
+
+.row {
+    box-sizing: border-box;
+    margin: - ($gutter / 2) 0;
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.grid {
+    float: left;
+    box-sizing: border-box;
+    padding: ($gutter / 2) 0;
+}
+
+.item {
+    background-color: lightskyblue;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.container{
+    padding: 1rem;
+}

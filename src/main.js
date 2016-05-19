@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 
 import Stars from './components/stars.js'
+import {} from './scss/scss.scss'
 
 
 class PageContent extends Component {

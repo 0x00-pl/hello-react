@@ -1,7 +1,7 @@
 import path from 'path'
 
 export default {
-    entry: './src/main.js',
+    entry: { bundle:['./src/main.js', './src/scss/scss.js'] },
     output: {
         path: path.resolve(__dirname, 'build/Release'),
         filename: 'bundle.js'
@@ -15,6 +15,14 @@ export default {
             {
                 test: /\.css$/,
                 loader: 'style!css'
+            },
+            {
+                test: /\.sass$/,
+                loader: 'style!css!sass'
+            },
+            {
+                test: /\.scss$/,
+                loader: 'style!css!sass'
             }
         ]
     }
