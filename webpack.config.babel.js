@@ -1,10 +1,10 @@
 import path from 'path'
 
 export default {
-    entry: { bundle:['./src/main.js', './src/scss/scss.js'] },
+    entry: { bundle:'./src/main.js', scss:'./src/scss/scss.js' },
     output: {
         path: path.resolve(__dirname, 'build/Release'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [
