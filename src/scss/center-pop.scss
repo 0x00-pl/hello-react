@@ -20,16 +20,16 @@
     opacity: 0.5;
 }
 
-@mixin center-model-main {
+@mixin center-model-main($height, $width) {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    // transform: translate3d(-50%, -50%, 0);
+    margin-top: - $height / 2;
+    margin-left: - $width / 2;
     
     border: 2px solid darkslateblue;
     background-color: lightblue;
-    
-    width: 200px;
 }
 
 @mixin center-model-header {
@@ -54,8 +54,11 @@
 }
 
 .model-main {
-    @include center-model-main;
-    width: 300px;
+    $width: 300px;
+    $height: 200px;
+    @include center-model-main($width, $height);
+    width: $width;
+    height: $height;
 }
 
 .model-header {
