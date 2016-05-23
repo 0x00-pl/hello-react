@@ -1,0 +1,36 @@
+$grid: $global-grid;
+$gutter: $global-gutter;
+
+.row {
+    box-sizing: border-box;
+    margin: 0 (- ($gutter / 2));
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+%grid {
+    float: left;
+    box-sizing: border-box;
+    padding:  ($gutter / 2) 0;
+}
+
+@for $i from 1 through $grid - 1 {
+    .col-#{$i} {
+        width: percentage($i/$grid);
+        @extend %grid;
+    }
+    .col-offset-#{$i} {
+        margin-left: percentage($i/$grid);
+    }
+    .col-push-#{$i} {
+        position: relative;
+        left: percentage($i/$grid);
+    }
+    .col-pull-#{$i} {
+        position: relative;
+        left: - percentage($i/$grid);
+    }
+}
