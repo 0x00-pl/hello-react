@@ -14,13 +14,27 @@ $gutter: $global-gutter;
 %grid {
     float: left;
     box-sizing: border-box;
-    padding:  ($gutter / 2) 0;
+    padding: 0 ($gutter / 2);
+}
+
+%grid-right {
+    float: right;
+    box-sizing: border-box;
+    padding: 0 ($gutter / 2);
+}
+
+.float-right {
+    float:right;
 }
 
 @for $i from 1 through $grid - 1 {
     .col-#{$i} {
         width: percentage($i/$grid);
         @extend %grid;
+    }
+    .col-right-#{$i} {
+        width: percentage($i/$grid);
+        @extend %grid-right;
     }
     .col-offset-#{$i} {
         margin-left: percentage($i/$grid);

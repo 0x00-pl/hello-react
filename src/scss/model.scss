@@ -1,0 +1,117 @@
+@import "setting.scss";
+@import "grid.scss";
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0 none;
+}
+
+.small {
+    color: gray;
+    font-size: 0.8rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: 0 none;
+  padding: 0.3rem 0.5rem;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border-bottom: 2px solid grey;
+  &:active{
+      transform: translate3d(2px, 2px, 0);
+  }
+}
+
+
+.model {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.model-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.model-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 4px;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0 2px 5px #555;
+}
+
+.model-header {
+  padding: 0.5rem 1rem;
+  background-color: dodgerblue;
+  color: white;
+  box-shadow: 0 2px 2px #aaa;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.model-body {
+  padding: 1rem;
+  div {
+      margin-bottom: 1rem;
+  }
+}
+
+.model-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  background-color: dodgerblue;
+  color: white;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.model-close {
+  position: relative;
+  transform: rotate(45deg) translate3d(-2px, -2px, 0);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  &::before, &::after{
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+  }
+  &::before{
+    width: 20px;
+    height: 2px;
+    top: 9px;
+  }
+  &::after{
+    width: 2px;
+    height: 20px;
+    left: 9px;
+  }
+}
