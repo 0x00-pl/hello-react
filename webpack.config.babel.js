@@ -1,7 +1,11 @@
 import path from 'path'
 
 export default {
-    entry: { bundle:'./src/main.js', scss:'./src/scss/scss.js' },
+    entry: {
+        bundle: './src/main.js',
+        scss: './src/scss/scss.js',
+        'center-pop': './src/scss/center-pop.js'
+    },
     output: {
         path: path.resolve(__dirname, 'build/Release'),
         filename: '[name].js'

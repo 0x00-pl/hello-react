@@ -1,0 +1,74 @@
+@import "setting.scss";
+@import "grid.scss";
+
+
+@mixin center-model {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+@mixin center-model-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+    background: darkslategray;
+    opacity: 0.5;
+}
+
+@mixin center-model-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    
+    border: 2px solid darkslateblue;
+    background-color: lightblue;
+    
+    width: 200px;
+}
+
+@mixin center-model-header {
+    font-size: 20px;
+}
+
+@mixin center-model-body {
+}
+
+@mixin center-model-footer {
+    
+}
+
+
+
+.model {
+    @include center-model;
+}
+
+.model-overlay {
+    @include center-model-overlay;
+}
+
+.model-main {
+    @include center-model-main;
+    width: 300px;
+}
+
+.model-header {
+    @include center-model-header;
+}
+
+.model-body {
+    @include center-model-body;
+}
+
+.model-footer {
+    @include center-model-footer;
+}
+
+
+
