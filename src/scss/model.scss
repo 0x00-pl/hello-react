@@ -5,22 +5,36 @@
 
 
 .btn {
-  background-color: transparent;
-  border: 0 none;
-  padding: 0.3rem 0.5rem;
-  background-color: dodgerblue;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  border-bottom: 2px solid grey;
-  &:active{
-      transform: translate3d(2px, 2px, 0);
-  }
+    $def-color: white;
+    $def-background-color: dodgerblue;
+    
+    border: 0 none;
+    padding: 0.3rem 0.5rem;
+    background-color: $def-background-color;
+    color: $def-color;
+    border-radius: 4px;
+    cursor: pointer;
+    border-bottom: 2px solid grey;
+    &:active{
+        transform: translate3d(2px, 2px, 0);
+        background-color: darken($def-background-color, 20%); 
+    }
 }
 
-
 .model {
-    @include fill(true);
+    @include fill(true);    
+    @include opacity(1);
+    z-index: 0;
+    // display: block;
+    transition: all 2s;
+    &.auto-hide {
+        @include opacity(0);
+        transform: translateY(-2rem);
+    }
+    &.hide {
+        z-index: -100;
+        // display: none;
+    }
 }
 
 .model-overlay {

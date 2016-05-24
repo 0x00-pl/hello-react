@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <div id="model-open" class="btn">pop model</div>
   <div>
     Overflowing text to show scroll behavior Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
     in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
@@ -127,12 +128,12 @@
   </div>
 
   <script src='./model.js'></script>
-  <div class="model">
+  <div id="model" class="model">
     <div class="model-overlay"></div>
     <div class="model-main">
       <div class="model-header">
         Hi PL, I m Rabbit.
-        <div class="model-close float-right"></div>
+        <div id="model-close" class="model-close float-right"></div>
       </div>
       <div class="model-body">
         <div class="row">
@@ -153,6 +154,37 @@
       </div>
     </div>
   </div>
+  <script>
+    function auto_hide_model(model){
+      model.classList.add("auto-hide");
+      var timmer_handle = setTimeout(function(){
+        if(model.classList.contains('auto-hide')){
+          model.classList.add('hide');
+        }
+      }, 2000);
+      return timmer_handle;
+    }
+    function show_mode(model, timmer_handle){
+      model.classList.remove("hide");
+      model.classList.remove("auto-hide");
+      if(timmer_handle){
+        clearTimeout(timmer_handle);
+      }
+    }
+  
+    var model = document.getElementById("model");
+    var model_open = document.getElementById("model-open");
+    var model_close = document.getElementById("model-close");
+    var timmer_handle = undefined;
+    model_close.addEventListener("click", function(){
+      timmer_handle = auto_hide_model(model);
+    });
+    model_open.addEventListener("click", function(){
+      show_mode(model, timmer_handle);
+    });
+    
+    
+  </script>
 </body>
 
 </html>
