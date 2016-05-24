@@ -1,25 +1,8 @@
 @import "setting.scss";
+@import "normal.scss";
 @import "grid.scss";
+@import "fill.scss";
 
-*, *:before, *:after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-*:focus {
-  outline: 0 none;
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.small {
-    color: gray;
-    font-size: 0.8rem;
-}
 
 .btn {
   background-color: transparent;
@@ -37,33 +20,21 @@ img {
 
 
 .model {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    @include fill(true);
 }
 
 .model-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.56);
+    @include fill(false);
+    background-color: rgba(0, 0, 0, 0.56);
 }
 
 .model-main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  max-width: 600px;
-  height: 300px;
-  background-color: #fff;
-  border-radius: 4px;
-  transform: translate3d(-50%, -50%, 0);
-  box-shadow: 0 2px 5px #555;
+    @include fill(false, "cc", 300px, 600px);
+    height: 300px;
+    width: 600px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px #555;
 }
 
 .model-header {
@@ -83,10 +54,7 @@ img {
 }
 
 .model-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    @include fill(false, "bf");
   padding: 0.5rem;
   font-size: 0.8rem;
   background-color: dodgerblue;

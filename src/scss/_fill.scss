@@ -1,0 +1,38 @@
+
+
+// $model = t|b|f|c l|r|f|c 
+//   Top Bottom Left Right Fill Center
+@mixin fill ($isfix, $mode:"ff", $height:200px, $width: 300px){
+    @if $isfix {
+        position: fixed;
+    }@else {
+        position: absolute;
+    }
+    
+    $vmode: str-slice($mode, 1, 1);
+    $hmode: str-slice($mode, 2, 2);
+    
+    @if $vmode=="t" {
+        top: 0;
+    }@else if $vmode=="b"{
+        bottom: 0;
+    }@else if $vmode=="f" {
+        top: 0;
+        bottom: 0;
+    }@else if $vmode=="c" {
+        top: 50%;
+        margin-top: - $height / 2;
+    }
+    
+    @if $hmode=="l" {
+        left: 0;
+    }@else if $hmode=="r"{
+        right: 0;
+    }@else if $hmode=="f" {
+        left: 0;
+        right: 0;
+    }@else if $hmode=="c" {
+        left: 50%;
+        margin-left: - $width / 2;
+    }
+}
