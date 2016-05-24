@@ -22,18 +22,21 @@
 }
 
 .model {
-    @include fill(true);    
-    @include opacity(1);
-    z-index: 0;
-    // display: block;
+    @include fill(true);
     transition: all 2s;
+    // &.active{    
+        @include opacity(1);
+        // z-index: 0;
+        display: block;
+    // }
     &.auto-hide {
         @include opacity(0);
+        display: block;
         transform: translateY(-2rem);
     }
     &.hide {
-        z-index: -100;
-        // display: none;
+        // z-index: -100;
+        display: none;
     }
 }
 

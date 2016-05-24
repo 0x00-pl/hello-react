@@ -166,7 +166,9 @@
     }
     function show_mode(model, timmer_handle){
       model.classList.remove("hide");
-      model.classList.remove("auto-hide");
+      requestAnimationFrame(function(){
+        model.classList.remove("auto-hide");
+      });
       if(timmer_handle){
         clearTimeout(timmer_handle);
       }
