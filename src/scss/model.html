@@ -155,34 +155,28 @@
     </div>
   </div>
   <script>
-    function auto_hide_model(model){
-      model.classList.add("auto-hide");
-      var timmer_handle = setTimeout(function(){
-        if(model.classList.contains('auto-hide')){
+    function make_auto_hide(model){
+      model.addEventListener('transitionend',function(){
+        console.log(getComputedStyle(model, null).opacity)
+        if(getComputedStyle(model, null).opacity == 0){
           model.classList.add('hide');
         }
-      }, 2000);
-      return timmer_handle;
-    }
-    function show_mode(model, timmer_handle){
-      model.classList.remove("hide");
-      requestAnimationFrame(function(){
-        model.classList.remove("auto-hide");
       });
-      if(timmer_handle){
-        clearTimeout(timmer_handle);
-      }
     }
-  
+    
     var model = document.getElementById("model");
     var model_open = document.getElementById("model-open");
     var model_close = document.getElementById("model-close");
-    var timmer_handle = undefined;
+    
+    make_auto_hide(model)
     model_close.addEventListener("click", function(){
-      timmer_handle = auto_hide_model(model);
+      model.classList.add('auto-hide');
     });
     model_open.addEventListener("click", function(){
-      show_mode(model, timmer_handle);
+      model.classList.remove('hide');
+      requestAnimationFrame(function(){
+        model.classList.remove('auto-hide');
+      });
     });
     
     
