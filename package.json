@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cp src/index.html public/ && cp src/hello-css/* public/ && cp src/scss/*.html public/ && node_modules/.bin/webpack",
+    "build": "cp src/index.html public/ && cp src/hello-css/* public/ && cp src/scss/*.html public/ && node_modules/.bin/webpack && cp build/Release/* public/",
     "start": "node_modules/.bin/webpack-dev-server --content-base public --progress --colors"
   },
   "author": "",
