@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .ok-sign {
+            position: relative; top: 0;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .ok-sign:hover::before{
+            content: '';
+            position: absolute;
+            
+            left: -20px;
+            width: 20px;
+            height: 10px;
+            border-left: 3px solid green;
+            border-bottom: 3px solid green;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ok-sign">some text</div>
+</body>
+
+</html>

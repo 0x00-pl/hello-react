@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .b-red {
+            background-color: red;
+        }
+        
+        .b-gray {
+            background-color: gray;
+        }
+        
+        .b-blue {
+            background-color: blue;
+        }
+        
+        .b-yellow {
+            background-color: yellow;
+        }
+        
+        .css-box {
+            display: block;
+            background-color: lightcyan;
+            margin: 0 auto;
+            width: 400px;
+        }
+        
+        .css-float {
+            float: left;
+        }
+        
+        .gird {
+            float: left;
+            /*height: 50px;*/
+            width: 25%;
+        }
+        
+        .clearfix {
+            clear: both;
+        }
+        
+        .float-row::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        .box-1000 {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: lightgoldenrodyellow
+        }
+        
+        .item-float {
+            float: left;
+            width: 20%;
+            box-sizing: border-box;
+            border: 2px;
+            background-color: lightsteelblue;
+        }
+        
+        .item-float::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        .item-footer:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        .item-footer-left {
+            float: left;
+            color: red;
+        }
+        
+        .item-footer-right {
+            float: right;
+        }
+    </style>
+    <script src='https://cdn.bootcss.com/holder/2.9.3/holder.min.js'></script>
+</head>
+
+<body>
+
+    <div class="css-box">
+        <img src='holder.js/50x50' class='css-float' /> Note: If you're referring to this property from JavaScript as a member
+        of the element.style object, you must spell it as cssFloat. Also note that Internet Explorer versions 8 and older
+        spelled this styleFloat. This is an exception to the rule that the name of the DOM member is the camel-case name
+        of the dash-separated CSS name (and is due to the fact that "float" is a reserved word in JavaScript, as with the
+        need to escape "class" as "className" and escape [label]'s "for" as "htmlFor").
+    </div>
+    <div class="css-box">
+        <div class='float-row'>
+            <div class='gird width-q b-red'>
+                <div>123123</div>
+                <div>123123</div>
+                <div>123123</div>
+                <div>123123</div>
+            </div>
+            <div class='gird width-q b-gray'>
+                <div>123123</div>
+                <div>123123</div>
+                <div>123123</div>
+            </div>
+            <div class='gird width-q b-blue'>
+
+                <div>123123</div>
+                <div>123123</div>
+            </div>
+            <div class='gird width-q b-yellow'></div>
+        </div>
+        <!--<div class='clearfix'></div>-->
+        <div>abcabc</div>
+        <div>abcabc</div>
+        <div>abcabc</div>
+        <div>abcabc</div>
+        <div>abcabc</div>
+    </div>
+    <div class='box-1000'>
+        <div class='item-float'>
+            <img src='holder.js/198x200' />
+            <text>
+                Also note that Internet Explorer versions 8 and older
+                spelled this styleFloat.
+            </text>
+            <div class='item-footer'>
+                <div class='item-footer-left'>$99.99</div>
+                <div class='item-footer-right'>aa: 123</div>
+            </div>
+        </div>
+        <div class='item-float'>
+            <img src='holder.js/198x200' />
+            <text>
+                Also note that Internet Explorer versions 8 and older
+                spelled this styleFloat.
+            </text>
+            <div class='item-footer'>
+                <div class='item-footer-left'>$99.99</div>
+                <div class='item-footer-right'>aa: 123</div>
+            </div>
+        </div>
+        <div class='item-float'>
+            <img src='holder.js/198x200' />
+            <text>
+                Also note that Internet Explorer versions 8 and older
+                spelled this styleFloat.
+            </text>
+            <div class='item-footer'>
+                <div class='item-footer-left'>$99.99</div>
+                <div class='item-footer-right'>aa: 123</div>
+            </div>
+        </div>
+        <div class='item-float'>
+            <img src='holder.js/198x200' />
+            <text>
+                Also note that Internet Explorer versions 8 and older
+                spelled this styleFloat.
+            </text>
+            <div class='item-footer'>
+                <div class='item-footer-left'>$99.99</div>
+                <div class='item-footer-right'>aa: 123</div>
+            </div>
+        </div>
+        <div class='item-float'>
+            <img src='holder.js/198x200' />
+            <text>
+                Also note that Internet Explorer versions 8 and older
+                spelled this styleFloat.
+            </text>
+            <div class='item-footer'>
+                <div class='item-footer-left'>$99.99</div>
+                <div class='item-footer-right'>aa: 123</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
