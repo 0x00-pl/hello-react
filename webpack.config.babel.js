@@ -5,7 +5,8 @@ export default {
         bundle: './src/main.js',
         scss: './src/scss/scss.js',
         'center-pop': './src/scss/center-pop.js',
-        'model': './src/scss/model.js'
+        'model': './src/scss/model.js',
+        'baidu': './src/scss/baidu.js',
     },
     output: {
         path: path.resolve(__dirname, 'build/Release'),

@@ -1,0 +1,96 @@
+@import 'setting.scss';
+@import 'grid.scss';
+@import 'typo.scss';
+@import 'fill.scss';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    top: 0;
+    min-height: 600px;
+    min-width: 400px;
+}
+
+$mainblue: blue;
+
+header {
+    @include fill(false, "uf");
+    margin: 1.5rem 1.5rem;
+    a {
+        margin: 0 0.5em;
+        text-decoration: underline;
+        color: black;
+        &:hover {
+            color: $mainblue
+        }
+    }
+    .menu {
+        background-color: $mainblue;
+        color: white;
+        padding: 0.25em;
+    }
+}
+
+main {
+    .v-center {
+        @include fill(false, "cf", 191, 0);
+        top: 15%;
+    }
+    .logo{
+        width: 270px;
+        margin: 50px auto;
+        .logo-image {
+            width: 270px;
+            height: 129px;
+            background-color: $mainblue;
+        }
+    }
+    .search {
+        width: 640px;
+        margin: 0 auto;
+    }
+    .search-box {
+        display: inline-block;
+        border: 1px solid $mainblue;
+        border-right: none;
+        width: 540px;
+        height: 2em;
+        box-sizing: border-box;
+    }
+    .search-btn {
+        float: right;
+        display: inline-block;
+        width: 100px;
+        height: 2em;
+        border: none;
+        color: white;
+        background-color: $mainblue;
+        box-sizing: border-box;
+    }
+
+
+}
+
+footer {
+    @include fill(false, "bf");
+    margin: 1.5rem;
+    .qr-code {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        background-color: dimgray;
+        float: left;
+    }
+    .qr-text {
+        margin: 10px;
+    }
+    
+    .center {
+        margin: 0 auto;
+        width: 600px;
+    }
+    
+}
