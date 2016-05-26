@@ -73,3 +73,16 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
+
+input {
+    background-color: transparent;
+    border: 0 none;
+    font: {
+        size: 1rem;
+        weight: normal;
+        style: normal;
+    }
+    line-height: 1;
+    padding: 0.3em 0.5em;
+    width: 100%;
+}
