@@ -5,6 +5,7 @@
 
 html, body {
     height: 100%;
+    background-color: white;
 }
 
 body {
@@ -51,6 +52,21 @@ main {
     .search {
         width: 640px;
         margin: 0 auto;
+        position: relative;
+        top: 0;
+        .icon-image {
+            background: #fff url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_679c15cc.png") no-repeat scroll 0 0;
+            height: 16px;
+            width: 18px;
+            position: absolute;
+            top: 50%;
+            right: 100px;
+            margin-top: -8px;
+            margin-right: 5px;
+            &:hover {
+                background-position: 0 -20px;
+            }
+        }
     }
     .search-box {
         display: inline-block;
@@ -81,16 +97,29 @@ footer {
         width: 60px;
         height: 60px;
         margin: 10px;
-        background-color: dimgray;
+        background-image: url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_62c636fe.png");
         float: left;
     }
     .qr-text {
-        margin: 10px;
+        margin: 20px 0;
+        font-size: 12px;
+        line-height: 1.5em;
     }
     
     .center {
         margin: 0 auto;
         width: 600px;
     }
-    
+    .icrlogo{
+        display: inline-block;
+        height: 17px;
+        width: 14px;
+        background-color: gray;
+    }
+    .small2{
+        margin: 10px 0;
+        font-size: 12px;
+        line-height: 17px;
+        color: gray;
+    }
 }
