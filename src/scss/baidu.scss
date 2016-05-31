@@ -73,18 +73,25 @@ main {
         border: 1px solid $mainblue;
         border-right: none;
         width: 540px;
-        height: 2em;
+        height: calc(2em + 2px);
         box-sizing: border-box;
+        vertical-align: middle;
+        input {
+            line-height: 2em;
+            vertical-align: middle;
+            padding: 0;
+        }
     }
     .search-btn {
-        float: right;
+        // float: right;
         display: inline-block;
         width: 100px;
-        height: 2em;
+        height: calc(2em + 2px);
         border: none;
         color: white;
         background-color: $mainblue;
         box-sizing: border-box;
+        vertical-align: middle;
     }
 
 
