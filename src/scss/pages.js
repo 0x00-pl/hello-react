@@ -29,8 +29,8 @@ function update_pagelist(pagelist, make_page_icon, current, total, max_show) {
         return pagelist
     }
 
-    let beg = (current - (max_show / 2)) | 0
-    let end = (current + (max_show / 2)) | 0
+    let beg = current - ((max_show / 2) | 0)
+    let end = current + ((max_show / 2) | 0) + 1
     if (beg < 0) {
         let r = 0 - beg
         beg += r
@@ -40,6 +40,7 @@ function update_pagelist(pagelist, make_page_icon, current, total, max_show) {
         beg -= r
         end -= r
     }
+    console.log(beg, end, current)
     for (let i = beg; i < end; i++) {
         let icon_name = i
         let icon_addr = i
