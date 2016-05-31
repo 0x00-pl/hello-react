@@ -93,7 +93,6 @@
 	        beg -= _r;
 	        end -= _r;
 	    }
-	    console.log(beg, end, current);
 	    for (var _i = beg; _i < end; _i++) {
 	        var icon_name = _i;
 	        var icon_addr = _i;
