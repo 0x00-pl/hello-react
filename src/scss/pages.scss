@@ -1,0 +1,14 @@
+.pages-icon{
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    margin: 0.25em;
+    background-color: cornflowerblue;
+    color: lightyellow;
+    &.active{
+        background-color: lightgray;
+        color: darkblue;
+    }
+}

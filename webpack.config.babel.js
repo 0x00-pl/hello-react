@@ -7,6 +7,7 @@ export default {
         'center-pop': './src/scss/center-pop.js',
         'model': './src/scss/model.js',
         'baidu': './src/scss/baidu.js',
+        'pages': './src/scss/pages.js',
     },
     output: {
         path: path.resolve(__dirname, 'build/Release'),
