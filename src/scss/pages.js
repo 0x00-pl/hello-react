@@ -40,7 +40,6 @@ function update_pagelist(pagelist, make_page_icon, current, total, max_show) {
         beg -= r
         end -= r
     }
-    console.log(beg, end, current)
     for (let i = beg; i < end; i++) {
         let icon_name = i
         let icon_addr = i
